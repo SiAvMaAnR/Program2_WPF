@@ -23,7 +23,7 @@
                                 <RowDefinition Height="20*"/>
                                 <RowDefinition Height="20*"/>
                             </Grid.RowDefinitions>
-                            <TextBlock x:Name="TextBlockError" TextWrapping="Wrap" TextAlignment="Center"  Grid.Row="0" HorizontalAlignment="Stretch" Margin="1,1,1,1" VerticalAlignment="Stretch"/>
+                            <TextBlock x:Name="TextBlockError" Text="{Binding ErrorInfo}"  TextWrapping="Wrap" TextAlignment="Center"  Grid.Row="0" HorizontalAlignment="Stretch" Margin="1,1,1,1" VerticalAlignment="Stretch"/>
                             <Button x:Name="buttonUpdateData" Content="Обновить" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="3" FontFamily="Arial" FontWeight="Bold" FontSize="24" Margin="5,10" Background="{x:Null}" Foreground="Black" BorderBrush="#FF3F4693" Click="buttonUpdateData_Click" />
                             <Button x:Name="buttonClearListData" Content="Очистить" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="3" FontFamily="Arial" FontWeight="Bold" FontSize="24" Margin="5,10" Background="{x:Null}" Foreground="Black" BorderBrush="#FF3F4693" Click="buttonDeleteData_Click" />
                         </Grid>

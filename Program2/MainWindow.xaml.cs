@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
 using LibraryShips;
+using Program2_WPF.ViewModels;
 
 namespace Program2_WPF
 {
@@ -27,15 +28,22 @@ namespace Program2_WPF
         private List<Ship> ships = new List<Ship>();
 
         private string path = @"D:\source\repos\Program2_WPF\Program2\XML\data.xml";
-
+        private MainWIndowsVIewModel mainModel;
         public MainWindow()
         {
             InitializeComponent();
-
-            XmlDownloadAsync();
+            mainModel = new MainWIndowsVIewModel();
+            this.DataContext = mainModel;
+            LoadData();
         }
 
-        //Загрузить с XML
+        /// <summary>
+        /// Асинхронно загружает файл
+        /// </summary>
+        public async void LoadData()
+        {
+            await XmlDownloadAsync();
+        }
         private async Task XmlDownloadAsync()
         {
             try
@@ -52,11 +60,17 @@ namespace Program2_WPF
             }
             catch
             {
-                TextBlockError.Text = "Не верная структура или пустой xml";
+                mainModel.ErrorInfo = "Не верная структура или пустой xml";
             }
         }
 
-        //Сохранить в XML
+        /// <summary>
+        /// Асинхронно сохраняет файл
+        /// </summary>
+        public async void SaveData()
+        {
+            await XmlSaveAsync();
+        }
         private async Task XmlSaveAsync()
         {
             try
@@ -72,7 +86,7 @@ namespace Program2_WPF
             }
             catch (Exception ex)
             {
-                TextBlockError.Text = ex.Message;
+                mainModel.ErrorInfo = ex.Message;
             }
         }
 
@@ -125,7 +139,7 @@ namespace Program2_WPF
             UpdateTable();
         }
 
-        //Очистить список
+        //Клик 
         private void buttonDeleteData_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -140,7 +154,7 @@ namespace Program2_WPF
             }
         }
 
-        //Добавить объект
+        //Клик добавления объекта
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -220,6 +234,8 @@ namespace Program2_WPF
         {
             XmlSaveAsync();
         }
+
+
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

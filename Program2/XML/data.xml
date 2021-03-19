@@ -1,17 +1,2 @@
 <?xml version="1.0"?>
-<ArrayOfShip xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Ship xsi:type="Steamer">
-    <Name>akfsdn</Name>
-    <Weight>786876</Weight>
-    <MaxSpeed>78687</MaxSpeed>
-    <MassOfCoal>87678</MassOfCoal>
-    <RangeOfTravel>68768</RangeOfTravel>
-  </Ship>
-  <Ship xsi:type="Steamer">
-    <Name>asfdjnksad</Name>
-    <Weight>78587</Weight>
-    <MaxSpeed>78687</MaxSpeed>
-    <MassOfCoal>78687</MassOfCoal>
-    <RangeOfTravel>87687</RangeOfTravel>
-  </Ship>
-</ArrayOfShip>
+<ArrayOfShip xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
