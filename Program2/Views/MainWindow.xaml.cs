@@ -1,21 +1,12 @@
-﻿using System;
+﻿using LibraryShips;
+using Program2_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml.Serialization;
-using LibraryShips;
-using Program2_WPF.ViewModels;
 
 namespace Program2_WPF
 {
@@ -28,15 +19,14 @@ namespace Program2_WPF
         private List<Ship> ships = new List<Ship>();
 
         private string path = @"D:\source\repos\Program2_WPF\Program2\XML\data.xml";
-        private MainWIndowsVIewModel mainModel;
+        private MainWindowsViewModel mainModel;
         public MainWindow()
         {
             InitializeComponent();
-            mainModel = new MainWIndowsVIewModel();
+            mainModel = new MainWindowsViewModel();
             this.DataContext = mainModel;
             LoadData();
         }
-
         /// <summary>
         /// Асинхронно загружает файл
         /// </summary>
@@ -96,7 +86,7 @@ namespace Program2_WPF
             ItemSailboat.Items.Clear();
             ItemCorvette.Items.Clear();
         }
-        
+
         private void ClearTableSearch()
         {
             SearchItemSteamer.Items.Clear();
@@ -119,7 +109,7 @@ namespace Program2_WPF
                     }
                     if (item is Sailboat)
                     {
-                        ItemSailboat.Items.Add(item);                  
+                        ItemSailboat.Items.Add(item);
                     }
                     if (item is Corvette)
                     {
@@ -145,10 +135,10 @@ namespace Program2_WPF
             try
             {
                 ships.Clear();
-                XmlSaveAsync();
+                SaveData();
                 UpdateTable();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 TextBlockError.Text = ex.Message;
             }
@@ -159,7 +149,7 @@ namespace Program2_WPF
         {
             try
             {
-                if (radioButton1.IsChecked==true)
+                if (radioButton1.IsChecked == true)
                 {
                     var name = textBox1.Text;
                     var weight = int.Parse(textBox2.Text);
@@ -217,7 +207,7 @@ namespace Program2_WPF
             textBlockFirst.Text = "Масса угля";
             textBlockSecond.Text = "Дальность хода";
         }
-
+        
         private void radioButton2_Checked(object sender, RoutedEventArgs e)
         {
             textBlockFirst.Text = "Материал паруса";
@@ -232,14 +222,12 @@ namespace Program2_WPF
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            XmlSaveAsync();
+            SaveData();
         }
-
-
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-           // UpdateTable();
+            // UpdateTable();
         }
 
         private void buttonSearch_Click(object sender, RoutedEventArgs e)

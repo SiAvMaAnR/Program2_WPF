@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Program2_WPF.ViewModels
 {
-    public class MainWIndowsVIewModel:EventChangedNotify
+    public class MainWindowsViewModel:EventChangedNotify
     {
         private string _ErrorInfo;
         public string ErrorInfo
@@ -18,5 +18,7 @@ namespace Program2_WPF.ViewModels
                 OnPropertyCHanged(nameof(ErrorInfo));
             }
         }
+
+
     }
 }

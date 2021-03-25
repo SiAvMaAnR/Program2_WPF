@@ -79,12 +79,16 @@
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0" Background="#FFD0D0D0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="247*"/>
+                            <ColumnDefinition Width="621*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <Grid Grid.Row="1" Background="White">
+                        <Grid Grid.Row="1" Background="White" Grid.ColumnSpan="2" Margin="0,0.2,0,-0.4">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
@@ -95,7 +99,7 @@
                             <RadioButton x:Name="radioButton3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" GroupName="1"  Content="Корвет" FontFamily="Arial" FontSize="18" FontWeight="Bold" Checked="radioButton3_Checked"/>
                         </Grid>
 
-                        <TextBlock x:Name="textBlockLog" HorizontalAlignment="Stretch"    VerticalAlignment="Center" TextAlignment="Center" Text="Выберите тип судна" Grid.Row="0" FontFamily="Arial" FontWeight="Bold" FontSize="20"/>
+                        <TextBlock x:Name="textBlockLog" HorizontalAlignment="Stretch"    VerticalAlignment="Center" TextAlignment="Center" Text="Выберите тип судна" Grid.Row="0" FontFamily="Arial" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Margin="0,21,0,20.8"/>
                     </Grid>
 
                     <Border Grid.Row="1" BorderBrush="#FF1B1C32" BorderThickness="4" Background="#FF929994"/>
