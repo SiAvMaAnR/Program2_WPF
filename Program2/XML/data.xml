@@ -1,2 +1,17 @@
 <?xml version="1.0"?>
-<ArrayOfShip xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfShip xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Ship xsi:type="Steamer">
+    <Name>dfmgn,dfn</Name>
+    <Weight>675765</Weight>
+    <MaxSpeed>757657</MaxSpeed>
+    <MassOfCoal>565765</MassOfCoal>
+    <RangeOfTravel>75657</RangeOfTravel>
+  </Ship>
+  <Ship xsi:type="Steamer">
+    <Name>тываиьываи</Name>
+    <Weight>675765</Weight>
+    <MaxSpeed>575</MaxSpeed>
+    <MassOfCoal>5756</MassOfCoal>
+    <RangeOfTravel>5675</RangeOfTravel>
+  </Ship>
+</ArrayOfShip>

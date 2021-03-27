@@ -15,26 +15,32 @@ namespace Program2_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
         private List<Ship> ships = new List<Ship>();
 
-        private string path = @"D:\source\repos\Program2_WPF\Program2\XML\data.xml";
-        private MainWindowsViewModel mainModel;
+        private MainWindowsViewModel Model;
+
+        public static string path { get; } = @"D:\source\repos\Program2_WPF\Program2\XML\data.xml";
+
         public MainWindow()
         {
             InitializeComponent();
-            mainModel = new MainWindowsViewModel();
-            this.DataContext = mainModel;
+            this.Model = new MainWindowsViewModel();
+            this.DataContext = Model;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
             LoadData();
         }
+
         /// <summary>
         /// Асинхронно загружает файл
         /// </summary>
         public async void LoadData()
         {
-            await XmlDownloadAsync();
+            await XmlLoadAsync();
         }
-        private async Task XmlDownloadAsync()
+        private async Task XmlLoadAsync()
         {
             try
             {
@@ -50,7 +56,7 @@ namespace Program2_WPF
             }
             catch
             {
-                mainModel.ErrorInfo = "Не верная структура или пустой xml";
+                Model.ErrorInfo = "Не верная структура или пустой xml";
             }
         }
 
@@ -76,7 +82,7 @@ namespace Program2_WPF
             }
             catch (Exception ex)
             {
-                mainModel.ErrorInfo = ex.Message;
+                Model.ErrorInfo = ex.Message;
             }
         }
 
@@ -180,7 +186,7 @@ namespace Program2_WPF
                 {
                     throw new Exception("Не выбран тип судна");
                 }
-
+                SaveData();
                 UpdateTable();
                 textBlockLog.Foreground = Brushes.Black;
                 textBlockLog.Text = "Выберите тип судна";
@@ -207,7 +213,7 @@ namespace Program2_WPF
             textBlockFirst.Text = "Масса угля";
             textBlockSecond.Text = "Дальность хода";
         }
-        
+
         private void radioButton2_Checked(object sender, RoutedEventArgs e)
         {
             textBlockFirst.Text = "Материал паруса";
@@ -218,16 +224,6 @@ namespace Program2_WPF
         {
             textBlockFirst.Text = "Вооружение";
             textBlockSecond.Text = "Оборудование";
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            SaveData();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            // UpdateTable();
         }
 
         private void buttonSearch_Click(object sender, RoutedEventArgs e)
@@ -259,5 +255,7 @@ namespace Program2_WPF
                 TextBlockError.Text = ex.Message;
             }
         }
+
+        
     }
 }
