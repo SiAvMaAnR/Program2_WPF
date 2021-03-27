@@ -15,7 +15,6 @@ namespace Program2_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
         private MainViewModel Model;
 
         public static string Path { get; } = @"D:\source\repos\Program2_WPF\Program2\XML\data.xml";
