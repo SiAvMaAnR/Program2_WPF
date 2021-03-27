@@ -84,4 +84,11 @@
     <SailMaterial>678687</SailMaterial>
     <SailArea>6876876</SailArea>
   </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>mdsfmsd</Name>
+    <Weight>435</Weight>
+    <MaxSpeed>76</MaxSpeed>
+    <SailMaterial>87</SailMaterial>
+    <SailArea>876</SailArea>
+  </Ship>
 </ArrayOfShip>

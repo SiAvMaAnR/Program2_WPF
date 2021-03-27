@@ -11,6 +11,20 @@ namespace Program2_WPF.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
+        private List<Ship> ships = new List<Ship>();
+        public List<Ship> Ships
+        {
+            get
+            {
+                return ships;
+            }
+            set
+            {
+                ships = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string name;
         public string Name
         {
@@ -63,20 +77,6 @@ namespace Program2_WPF.ViewModels
             {
                 secondField = value;
                 OnPropertyChanged(nameof(secondField));
-            }
-        }
-
-        private List<Ship> ships = new List<Ship>();
-        public List<Ship> Ships
-        {
-            get
-            {
-                return ships;
-            }
-            set
-            {
-                ships = value;
-                OnPropertyChanged();
             }
         }
 

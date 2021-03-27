@@ -49,13 +49,15 @@ namespace Program2_WPF
             await Model.XmlSaveAsync(Path, Model.Ships);
         }
 
-        //Обновление таблицу
+        /// <summary>
+        /// Выполняется обновление таблицы
+        /// </summary>
         private void UpdateTable()
         {
             try
             {
                 ClearTableView();
-                TextBlockError.Text = "";
+                Model.ErrorInfo = "";
                 foreach (var item in Model.Ships)
                 {
                     if (item is Steamer)
@@ -74,28 +76,12 @@ namespace Program2_WPF
             }
             catch (Exception ex)
             {
-                TextBlockError.Text = ex.Message;
+                Model.ErrorInfo = ex.Message;
             }
         }
 
-        //Очистка таблицы просмотра
-        private void ClearTableView()
-        {
-            ItemSteamer.Items.Clear();
-            ItemSailboat.Items.Clear();
-            ItemCorvette.Items.Clear();
-        }
-
-        //Очистка таблицы поиска
-        private void ClearTableSearch()
-        {
-            SearchItemSteamer.Items.Clear();
-            SearchItemSailboat.Items.Clear();
-            SearchItemCorvette.Items.Clear();
-        }
-
         /// <summary>
-        /// Выполняется обновление таблицы
+        /// Выполняется обновление таблицы по клику
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -212,6 +198,26 @@ namespace Program2_WPF
             {
                 Model.ErrorInfo = ex.Message;
             }
+        }
+
+        /// <summary>
+        /// Очистка DataGrid просмотра
+        /// </summary>
+        private void ClearTableView()
+        {
+            ItemSteamer.Items.Clear();
+            ItemSailboat.Items.Clear();
+            ItemCorvette.Items.Clear();
+        }
+
+        /// <summary>
+        /// Очистка DataGrid поиска
+        /// </summary>
+        private void ClearTableSearch()
+        {
+            SearchItemSteamer.Items.Clear();
+            SearchItemSailboat.Items.Clear();
+            SearchItemCorvette.Items.Clear();
         }
 
         #region RadioButtonsChecked
