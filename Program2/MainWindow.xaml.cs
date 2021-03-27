@@ -168,11 +168,11 @@ namespace Program2_WPF
 
         private void ClearTextBoxs()
         {
-            textBox1.Text = null;
-            textBox2.Text = null;
-            textBox3.Text = null;
-            textBox4.Text = null;
-            textBox5.Text = null;
+            Model.Name = null;
+            Model.Weight = null;
+            Model.MaxSpeed = null;
+            Model.FirstField = null;
+            Model.SecondField = null;
         }
 
         private void radioButton1_Checked(object sender, RoutedEventArgs e)

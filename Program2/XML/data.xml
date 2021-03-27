@@ -63,4 +63,11 @@
     <Armament>7567567</Armament>
     <Equipment>576576</Equipment>
   </Ship>
+  <Ship xsi:type="Corvette">
+    <Name>dfkhkjgd</Name>
+    <Weight>765765</Weight>
+    <MaxSpeed>5765765</MaxSpeed>
+    <Armament>6576576</Armament>
+    <Equipment>576575</Equipment>
+  </Ship>
 </ArrayOfShip>
