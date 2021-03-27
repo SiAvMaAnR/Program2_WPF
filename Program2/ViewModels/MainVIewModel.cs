@@ -9,68 +9,8 @@ using System.Xml.Serialization;
 
 namespace Program2_WPF.ViewModels
 {
-    public class MainViewModel:BaseViewModel
+    public class MainViewModel : BaseViewModel
     {
-        private List<Ship> ships = new List<Ship>();
-        public List<Ship> Ships
-        {
-            get
-            {
-                return ships;
-            }
-            set
-            {
-                ships = value;
-                OnPropertyChanged();
-            }
-        }
-
-
-
-        private string errorInfo;
-        public string ErrorInfo
-        {
-            get { return errorInfo; }
-            set
-            {
-                errorInfo = value;
-                OnPropertyChanged(nameof(ErrorInfo));
-            }
-        }
-        
-        private string logInfo = "\nВыберите тип судна!";
-        public string LogInfo
-        {
-            get { return logInfo; }
-            set
-            {
-                logInfo = value;
-                OnPropertyChanged(nameof(logInfo));
-            }
-        }
-
-        private string textBlockFirst;
-        public string TextBlockFirst
-        {
-            get { return textBlockFirst; }
-            set
-            {
-                textBlockFirst = value;
-                OnPropertyChanged(nameof(textBlockFirst));
-            }
-        }
-
-        private string textBlockSecond;
-        public string TextBlockSecond
-        {
-            get { return textBlockSecond; }
-            set
-            {
-                textBlockSecond = value;
-                OnPropertyChanged(nameof(textBlockSecond));
-            }
-        }
-
         private string name;
         public string Name
         {
@@ -81,7 +21,7 @@ namespace Program2_WPF.ViewModels
                 OnPropertyChanged(nameof(name));
             }
         }
-        
+
         private string weight;
         public string Weight
         {
@@ -92,7 +32,7 @@ namespace Program2_WPF.ViewModels
                 OnPropertyChanged(nameof(weight));
             }
         }
-        
+
         private string maxSpeed;
         public string MaxSpeed
         {
@@ -126,6 +66,63 @@ namespace Program2_WPF.ViewModels
             }
         }
 
+        private List<Ship> ships = new List<Ship>();
+        public List<Ship> Ships
+        {
+            get
+            {
+                return ships;
+            }
+            set
+            {
+                ships = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string textBlockFirst;
+        public string TextBlockFirst
+        {
+            get { return textBlockFirst; }
+            set
+            {
+                textBlockFirst = value;
+                OnPropertyChanged(nameof(textBlockFirst));
+            }
+        }
+
+        private string textBlockSecond;
+        public string TextBlockSecond
+        {
+            get { return textBlockSecond; }
+            set
+            {
+                textBlockSecond = value;
+                OnPropertyChanged(nameof(textBlockSecond));
+            }
+        }
+
+        private string errorInfo;
+        public string ErrorInfo
+        {
+            get { return errorInfo; }
+            set
+            {
+                errorInfo = value;
+                OnPropertyChanged(nameof(ErrorInfo));
+            }
+        }
+
+        private string logInfo = "\nВыберите тип судна!";
+        public string LogInfo
+        {
+            get { return logInfo; }
+            set
+            {
+                logInfo = value;
+                OnPropertyChanged(nameof(logInfo));
+            }
+        }
 
         /// <summary>
         /// Десериализация

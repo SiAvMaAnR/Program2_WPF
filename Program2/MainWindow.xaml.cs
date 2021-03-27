@@ -33,7 +33,6 @@ namespace Program2_WPF
             UpdateTable();
         }
 
-
         /// <summary>
         /// Асинхронно загружает файл
         /// </summary>

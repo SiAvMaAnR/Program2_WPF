@@ -77,4 +77,11 @@
     <SailMaterial>75765</SailMaterial>
     <SailArea>7657657</SailArea>
   </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>kldfngnd</Name>
+    <Weight>8676876</Weight>
+    <MaxSpeed>78687678</MaxSpeed>
+    <SailMaterial>678687</SailMaterial>
+    <SailArea>6876876</SailArea>
+  </Ship>
 </ArrayOfShip>
