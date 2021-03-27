@@ -15,49 +15,31 @@ namespace Program2_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Ship> ships = new List<Ship>();
 
-        private MainWindowsViewModel Model;
+        private MainViewModel Model;
 
-        public static string path { get; } = @"D:\source\repos\Program2_WPF\Program2\XML\data.xml";
+        public static string Path { get; } = @"D:\source\repos\Program2_WPF\Program2\XML\data.xml";
 
         public MainWindow()
         {
             InitializeComponent();
-            this.Model = new MainWindowsViewModel();
-            this.DataContext = Model;
+            Model = new MainViewModel();
+            DataContext = Model;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadData();
+            Model.Ships = await LoadData(Path);
+            UpdateTable();
         }
+
 
         /// <summary>
         /// Асинхронно загружает файл
         /// </summary>
-        public async void LoadData()
+        public async Task<List<Ship>> LoadData(string path)
         {
-            await XmlLoadAsync();
-        }
-        private async Task XmlLoadAsync()
-        {
-            try
-            {
-                await Task.Run(() =>
-                {
-                    XmlSerializer formatter = new XmlSerializer(typeof(List<Ship>));
-                    using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-                    {
-                        ships = (List<Ship>)formatter.Deserialize(fs);
-                    }
-                });
-                UpdateTable();
-            }
-            catch
-            {
-                Model.ErrorInfo = "Не верная структура или пустой xml";
-            }
+            return await Model.XmlLoadAsync<List<Ship>>(path) ?? new List<Ship>();
         }
 
         /// <summary>
@@ -65,39 +47,7 @@ namespace Program2_WPF
         /// </summary>
         public async void SaveData()
         {
-            await XmlSaveAsync();
-        }
-        private async Task XmlSaveAsync()
-        {
-            try
-            {
-                await Task.Run(() =>
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<Ship>));
-                    using (FileStream fs = new FileStream(path, FileMode.Create))
-                    {
-                        serializer.Serialize(fs, ships);
-                    }
-                });
-            }
-            catch (Exception ex)
-            {
-                Model.ErrorInfo = ex.Message;
-            }
-        }
-
-        private void ClearTableView()
-        {
-            ItemSteamer.Items.Clear();
-            ItemSailboat.Items.Clear();
-            ItemCorvette.Items.Clear();
-        }
-
-        private void ClearTableSearch()
-        {
-            SearchItemSteamer.Items.Clear();
-            SearchItemSailboat.Items.Clear();
-            SearchItemCorvette.Items.Clear();
+            await Model.XmlSaveAsync(Path, Model.Ships);
         }
 
         //Обновить таблицу
@@ -107,7 +57,7 @@ namespace Program2_WPF
             {
                 ClearTableView();
                 TextBlockError.Text = "";
-                foreach (var item in ships)
+                foreach (var item in Model.Ships)
                 {
                     if (item is Steamer)
                     {
@@ -129,18 +79,32 @@ namespace Program2_WPF
             }
         }
 
+        private void ClearTableView()
+        {
+            ItemSteamer.Items.Clear();
+            ItemSailboat.Items.Clear();
+            ItemCorvette.Items.Clear();
+        }
+
+        private void ClearTableSearch()
+        {
+            SearchItemSteamer.Items.Clear();
+            SearchItemSailboat.Items.Clear();
+            SearchItemCorvette.Items.Clear();
+        }
+
         //Обновить
         private void buttonUpdateData_Click(object sender, RoutedEventArgs e)
         {
             UpdateTable();
         }
 
-        //Клик 
+        //Клик очистки всех данных
         private void buttonDeleteData_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                ships.Clear();
+                Model.Ships.Clear();
                 SaveData();
                 UpdateTable();
             }
@@ -162,7 +126,7 @@ namespace Program2_WPF
                     var maxSpeed = int.Parse(textBox3.Text);
                     var massOfCoal = int.Parse(textBox4.Text);
                     var rangeOfTravel = int.Parse(textBox5.Text);
-                    ships.Add(new Steamer(name, maxSpeed, weight, massOfCoal, rangeOfTravel));
+                    Model.Ships.Add(new Steamer(name, maxSpeed, weight, massOfCoal, rangeOfTravel));
                 }
                 else if (radioButton2.IsChecked == true)
                 {
@@ -171,7 +135,7 @@ namespace Program2_WPF
                     var maxSpeed = int.Parse(textBox3.Text);
                     var sailMaterial = textBox4.Text;
                     var sailArea = int.Parse(textBox5.Text);
-                    ships.Add(new Sailboat(name, maxSpeed, weight, sailMaterial, sailArea));
+                    Model.Ships.Add(new Sailboat(name, maxSpeed, weight, sailMaterial, sailArea));
                 }
                 else if (radioButton3.IsChecked == true)
                 {
@@ -180,7 +144,7 @@ namespace Program2_WPF
                     var maxSpeed = int.Parse(textBox3.Text);
                     var armament = textBox4.Text;
                     var equipment = textBox5.Text;
-                    ships.Add(new Corvette(name, maxSpeed, weight, armament, equipment));
+                    Model.Ships.Add(new Corvette(name, maxSpeed, weight, armament, equipment));
                 }
                 else
                 {
@@ -231,7 +195,7 @@ namespace Program2_WPF
             try
             {
                 ClearTableSearch();
-                foreach (var item in ships)
+                foreach (var item in Model.Ships)
                 {
                     if (item.IsSearchContains(textBoxSearch.Text))
                     {

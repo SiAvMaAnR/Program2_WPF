@@ -14,4 +14,39 @@
     <MassOfCoal>5756</MassOfCoal>
     <RangeOfTravel>5675</RangeOfTravel>
   </Ship>
+  <Ship xsi:type="Steamer">
+    <Name>jksdkfh</Name>
+    <Weight>786876</Weight>
+    <MaxSpeed>876876</MaxSpeed>
+    <MassOfCoal>8768</MassOfCoal>
+    <RangeOfTravel>67868</RangeOfTravel>
+  </Ship>
+  <Ship xsi:type="Steamer">
+    <Name>sffdsfsd</Name>
+    <Weight>876876</Weight>
+    <MaxSpeed>8767868</MaxSpeed>
+    <MassOfCoal>676876</MassOfCoal>
+    <RangeOfTravel>86877</RangeOfTravel>
+  </Ship>
+  <Ship xsi:type="Steamer">
+    <Name>sfskdnjfkd</Name>
+    <Weight>87686</Weight>
+    <MaxSpeed>7678687</MaxSpeed>
+    <MassOfCoal>68767868</MassOfCoal>
+    <RangeOfTravel>76786876</RangeOfTravel>
+  </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>sdfbjhbdfhj</Name>
+    <Weight>76576</Weight>
+    <MaxSpeed>5786576</MaxSpeed>
+    <SailMaterial>57576</SailMaterial>
+    <SailArea>6757</SailArea>
+  </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>dbsfbkjdbsfkb</Name>
+    <Weight>6775</Weight>
+    <MaxSpeed>76576567</MaxSpeed>
+    <SailMaterial>576576</SailMaterial>
+    <SailArea>576576</SailArea>
+  </Ship>
 </ArrayOfShip>
