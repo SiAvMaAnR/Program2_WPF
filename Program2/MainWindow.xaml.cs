@@ -50,7 +50,7 @@ namespace Program2_WPF
             await Model.XmlSaveAsync(Path, Model.Ships);
         }
 
-        //Обновить таблицу
+        //Обновление таблицу
         private void UpdateTable()
         {
             try
@@ -79,6 +79,7 @@ namespace Program2_WPF
             }
         }
 
+        //Очистка таблицы просмотра
         private void ClearTableView()
         {
             ItemSteamer.Items.Clear();
@@ -86,6 +87,7 @@ namespace Program2_WPF
             ItemCorvette.Items.Clear();
         }
 
+        //Очистка таблицы поиска
         private void ClearTableSearch()
         {
             SearchItemSteamer.Items.Clear();
@@ -93,13 +95,21 @@ namespace Program2_WPF
             SearchItemCorvette.Items.Clear();
         }
 
-        //Обновить
+        /// <summary>
+        /// Выполняется обновление таблицы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonUpdateData_Click(object sender, RoutedEventArgs e)
         {
             UpdateTable();
         }
 
-        //Клик очистки всех данных
+        /// <summary>
+        /// Выполняется очистка списка
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonDeleteData_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -114,7 +124,11 @@ namespace Program2_WPF
             }
         }
 
-        //Клик добавления объекта
+        /// <summary>
+        /// Выполняется добавление объектов в список
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -165,26 +179,12 @@ namespace Program2_WPF
                 Model.LogInfo = ex.Message;
             }
         }
-        
 
-        private void radioButton1_Checked(object sender, RoutedEventArgs e)
-        {
-           Model.TextBlockFirst = "Масса угля";
-            Model.TextBlockSecond = "Дальность хода";
-        }
-
-        private void radioButton2_Checked(object sender, RoutedEventArgs e)
-        {
-            Model.TextBlockFirst = "Материал паруса";
-            Model.TextBlockSecond = "Площадь паруса";
-        }
-
-        private void radioButton3_Checked(object sender, RoutedEventArgs e)
-        {
-            Model.TextBlockFirst = "Вооружение";
-            Model.TextBlockSecond= "Оборудование";
-        }
-
+        /// <summary>
+        /// Выполняется поиск по полям объектов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSearch_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -211,8 +211,28 @@ namespace Program2_WPF
             }
             catch (Exception ex)
             {
-                TextBlockError.Text = ex.Message;
+                Model.ErrorInfo = ex.Message;
             }
         }
+
+        #region RadioButtonsChecked
+        private void radioButton1_Checked(object sender, RoutedEventArgs e)
+        {
+            Model.TextBlockFirst = "Масса угля";
+            Model.TextBlockSecond = "Дальность хода";
+        }
+
+        private void radioButton2_Checked(object sender, RoutedEventArgs e)
+        {
+            Model.TextBlockFirst = "Материал паруса";
+            Model.TextBlockSecond = "Площадь паруса";
+        }
+
+        private void radioButton3_Checked(object sender, RoutedEventArgs e)
+        {
+            Model.TextBlockFirst = "Вооружение";
+            Model.TextBlockSecond = "Оборудование";
+        }
+        #endregion
     }
 }
