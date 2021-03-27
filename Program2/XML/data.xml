@@ -70,4 +70,11 @@
     <Armament>6576576</Armament>
     <Equipment>576575</Equipment>
   </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>kjdshkfj</Name>
+    <Weight>65675</Weight>
+    <MaxSpeed>5765</MaxSpeed>
+    <SailMaterial>75765</SailMaterial>
+    <SailArea>7657657</SailArea>
+  </Ship>
 </ArrayOfShip>

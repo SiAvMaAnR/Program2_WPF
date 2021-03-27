@@ -181,5 +181,17 @@ namespace Program2_WPF.ViewModels
                 }
             });
         }
+
+        /// <summary>
+        /// Очистка полей ввода данных(ТекстБоксов)
+        /// </summary>
+        public void ClearTextBoxs()
+        {
+            Name = null;
+            Weight = null;
+            MaxSpeed = null;
+            FirstField = null;
+            SecondField = null;
+        }
     }
 }

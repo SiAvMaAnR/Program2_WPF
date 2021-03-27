@@ -157,7 +157,7 @@ namespace Program2_WPF
                 UpdateTable();
                 textBlockLog.Foreground = Brushes.Black;
                 Model.LogInfo = "\nВыберите тип судна";
-                ClearTextBoxs();
+                Model.ClearTextBoxs();
             }
             catch (Exception ex)
             {
@@ -165,15 +165,7 @@ namespace Program2_WPF
                 Model.LogInfo = ex.Message;
             }
         }
-
-        private void ClearTextBoxs()
-        {
-            Model.Name = null;
-            Model.Weight = null;
-            Model.MaxSpeed = null;
-            Model.FirstField = null;
-            Model.SecondField = null;
-        }
+        
 
         private void radioButton1_Checked(object sender, RoutedEventArgs e)
         {
@@ -222,7 +214,5 @@ namespace Program2_WPF
                 TextBlockError.Text = ex.Message;
             }
         }
-
-        
     }
 }
