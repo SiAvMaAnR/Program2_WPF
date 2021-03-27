@@ -26,6 +26,7 @@ namespace Program2_WPF.ViewModels
         }
 
 
+
         private string errorInfo;
         public string ErrorInfo
         {
@@ -37,7 +38,7 @@ namespace Program2_WPF.ViewModels
             }
         }
         
-        private string logInfo = "Выберите тип судна!";
+        private string logInfo = "\nВыберите тип судна!";
         public string LogInfo
         {
             get { return logInfo; }
@@ -45,6 +46,28 @@ namespace Program2_WPF.ViewModels
             {
                 logInfo = value;
                 OnPropertyChanged(nameof(logInfo));
+            }
+        }
+
+        private string textBlockFirst;
+        public string TextBlockFirst
+        {
+            get { return textBlockFirst; }
+            set
+            {
+                textBlockFirst = value;
+                OnPropertyChanged(nameof(textBlockFirst));
+            }
+        }
+
+        private string textBlockSecond;
+        public string TextBlockSecond
+        {
+            get { return textBlockSecond; }
+            set
+            {
+                textBlockSecond = value;
+                OnPropertyChanged(nameof(textBlockSecond));
             }
         }
 

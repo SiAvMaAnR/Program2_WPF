@@ -156,13 +156,13 @@ namespace Program2_WPF
                 SaveData();
                 UpdateTable();
                 textBlockLog.Foreground = Brushes.Black;
-                textBlockLog.Text = "Выберите тип судна";
+                Model.LogInfo = "\nВыберите тип судна";
                 ClearTextBoxs();
             }
             catch (Exception ex)
             {
                 textBlockLog.Foreground = Brushes.Red;
-                textBlockLog.Text = ex.Message;
+                Model.LogInfo = ex.Message;
             }
         }
 
@@ -177,20 +177,20 @@ namespace Program2_WPF
 
         private void radioButton1_Checked(object sender, RoutedEventArgs e)
         {
-            textBlockFirst.Text = "Масса угля";
-            textBlockSecond.Text = "Дальность хода";
+           Model.TextBlockFirst = "Масса угля";
+            Model.TextBlockSecond = "Дальность хода";
         }
 
         private void radioButton2_Checked(object sender, RoutedEventArgs e)
         {
-            textBlockFirst.Text = "Материал паруса";
-            textBlockSecond.Text = "Площадь паруса";
+            Model.TextBlockFirst = "Материал паруса";
+            Model.TextBlockSecond = "Площадь паруса";
         }
 
         private void radioButton3_Checked(object sender, RoutedEventArgs e)
         {
-            textBlockFirst.Text = "Вооружение";
-            textBlockSecond.Text = "Оборудование";
+            Model.TextBlockFirst = "Вооружение";
+            Model.TextBlockSecond= "Оборудование";
         }
 
         private void buttonSearch_Click(object sender, RoutedEventArgs e)

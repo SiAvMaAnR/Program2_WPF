@@ -79,10 +79,6 @@
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0" Background="#FFD0D0D0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="247*"/>
-                            <ColumnDefinition Width="621*"/>
-                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
@@ -99,7 +95,7 @@
                             <RadioButton x:Name="radioButton3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" GroupName="1"  Content="Корвет" FontFamily="Arial" FontSize="18" FontWeight="Bold" Checked="radioButton3_Checked"/>
                         </Grid>
 
-                        <TextBlock x:Name="textBlockLog" HorizontalAlignment="Stretch"    VerticalAlignment="Center" TextAlignment="Center" Text="{Binding LogInfo}" Grid.Row="0" FontFamily="Arial" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Margin="0,21,0,20.8"/>
+                        <TextBlock x:Name="textBlockLog" HorizontalAlignment="Stretch"    VerticalAlignment="Stretch" TextAlignment="Center" Text="{Binding LogInfo}" Grid.Row="0" FontFamily="Arial" FontWeight="Bold" FontSize="20"/>
                     </Grid>
 
                     <Border Grid.Row="1" BorderBrush="#FF1B1C32" BorderThickness="4" Background="#FF929994"/>
@@ -132,12 +128,12 @@
                         </StackPanel>
 
                         <StackPanel Grid.Column="0" Grid.Row="1" Margin="5,5,5,5">
-                            <TextBlock x:Name="textBlockFirst" Margin="10,20,10,0" TextAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF050303"/>
+                            <TextBlock x:Name="textBlockFirst" Text="{Binding TextBlockFirst}" Margin="10,20,10,0" TextAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF050303"/>
                             <TextBox x:Name="textBox4" Text="{Binding FirstField}" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Grid.Row="1" Margin="5,5,5,5">
-                            <TextBlock x:Name="textBlockSecond" Margin="10,20,10,0" TextAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF050303"/>
+                            <TextBlock x:Name="textBlockSecond" Text="{Binding TextBlockSecond}" Margin="10,20,10,0" TextAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF050303"/>
                             <TextBox x:Name="textBox5"  Text="{Binding SecondField}" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
                         </StackPanel>
 

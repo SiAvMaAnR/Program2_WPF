@@ -56,4 +56,11 @@
     <SailMaterial>675765</SailMaterial>
     <SailArea>666</SailArea>
   </Ship>
+  <Ship xsi:type="Corvette">
+    <Name>sdfnkjdsn</Name>
+    <Weight>765766</Weight>
+    <MaxSpeed>675765765</MaxSpeed>
+    <Armament>7567567</Armament>
+    <Equipment>576576</Equipment>
+  </Ship>
 </ArrayOfShip>
