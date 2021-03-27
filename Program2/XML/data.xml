@@ -49,4 +49,11 @@
     <SailMaterial>576576</SailMaterial>
     <SailArea>576576</SailArea>
   </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>Привет</Name>
+    <Weight>675765</Weight>
+    <MaxSpeed>765765</MaxSpeed>
+    <SailMaterial>675765</SailMaterial>
+    <SailArea>666</SailArea>
+  </Ship>
 </ArrayOfShip>

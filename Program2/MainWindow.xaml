@@ -99,7 +99,7 @@
                             <RadioButton x:Name="radioButton3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" GroupName="1"  Content="Корвет" FontFamily="Arial" FontSize="18" FontWeight="Bold" Checked="radioButton3_Checked"/>
                         </Grid>
 
-                        <TextBlock x:Name="textBlockLog" HorizontalAlignment="Stretch"    VerticalAlignment="Center" TextAlignment="Center" Text="Выберите тип судна" Grid.Row="0" FontFamily="Arial" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Margin="0,21,0,20.8"/>
+                        <TextBlock x:Name="textBlockLog" HorizontalAlignment="Stretch"    VerticalAlignment="Center" TextAlignment="Center" Text="{Binding LogInfo}" Grid.Row="0" FontFamily="Arial" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Margin="0,21,0,20.8"/>
                     </Grid>
 
                     <Border Grid.Row="1" BorderBrush="#FF1B1C32" BorderThickness="4" Background="#FF929994"/>
@@ -118,27 +118,27 @@
 
                         <StackPanel Grid.Column="0" Grid.Row="0" Margin="5,5,5,5">
                             <TextBlock Margin="10,20,10,0" TextAlignment="Center" Text="Название" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF050303"/>
-                            <TextBox x:Name="textBox1" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
+                            <TextBox x:Name="textBox1" Text="{Binding Name}" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Grid.Row="0" Margin="5,5,5,5">
                             <TextBlock Margin="10,20,10,0" TextAlignment="Center" Text="Масса(т)" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF050303"/>
-                            <TextBox x:Name="textBox2" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
+                            <TextBox x:Name="textBox2" Text="{Binding Weight}" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Grid.Row="0" Margin="5,5,5,5">
                             <TextBlock Margin="10,20,10,0" TextAlignment="Center" Text="Скорость" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF050303"/>
-                            <TextBox x:Name="textBox3" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
+                            <TextBox x:Name="textBox3" Text="{Binding MaxSpeed}" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="0" Grid.Row="1" Margin="5,5,5,5">
                             <TextBlock x:Name="textBlockFirst" Margin="10,20,10,0" TextAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF050303"/>
-                            <TextBox x:Name="textBox4" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
+                            <TextBox x:Name="textBox4" Text="{Binding FirstField}" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Grid.Row="1" Margin="5,5,5,5">
                             <TextBlock x:Name="textBlockSecond" Margin="10,20,10,0" TextAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF050303"/>
-                            <TextBox x:Name="textBox5" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
+                            <TextBox x:Name="textBox5"  Text="{Binding SecondField}" Margin="10,10,10,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
                         </StackPanel>
 
                         <Button Grid.Column="1" Grid.Row="1" Content="Добавить" Margin="20,25,20,50" FontSize="26" FontFamily="Arial" FontWeight="Bold" BorderThickness="3,1" Click="Button_Click" Foreground="White">

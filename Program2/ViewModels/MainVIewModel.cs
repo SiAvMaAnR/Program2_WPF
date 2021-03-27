@@ -26,14 +26,80 @@ namespace Program2_WPF.ViewModels
         }
 
 
-        private string _ErrorInfo;
+        private string errorInfo;
         public string ErrorInfo
         {
-            get { return _ErrorInfo; }
+            get { return errorInfo; }
             set
             {
-                _ErrorInfo = value;
+                errorInfo = value;
                 OnPropertyChanged(nameof(ErrorInfo));
+            }
+        }
+        
+        private string logInfo = "Выберите тип судна!";
+        public string LogInfo
+        {
+            get { return logInfo; }
+            set
+            {
+                logInfo = value;
+                OnPropertyChanged(nameof(logInfo));
+            }
+        }
+
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                OnPropertyChanged(nameof(name));
+            }
+        }
+        
+        private string weight;
+        public string Weight
+        {
+            get { return weight; }
+            set
+            {
+                weight = value;
+                OnPropertyChanged(nameof(weight));
+            }
+        }
+        
+        private string maxSpeed;
+        public string MaxSpeed
+        {
+            get { return maxSpeed; }
+            set
+            {
+                maxSpeed = value;
+                OnPropertyChanged(nameof(maxSpeed));
+            }
+        }
+
+        private string firstField;
+        public string FirstField
+        {
+            get { return firstField; }
+            set
+            {
+                firstField = value;
+                OnPropertyChanged(nameof(firstField));
+            }
+        }
+
+        private string secondField;
+        public string SecondField
+        {
+            get { return secondField; }
+            set
+            {
+                secondField = value;
+                OnPropertyChanged(nameof(secondField));
             }
         }
 

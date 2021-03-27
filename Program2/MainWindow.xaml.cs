@@ -121,35 +121,38 @@ namespace Program2_WPF
             {
                 if (radioButton1.IsChecked == true)
                 {
-                    var name = textBox1.Text;
-                    var weight = int.Parse(textBox2.Text);
-                    var maxSpeed = int.Parse(textBox3.Text);
-                    var massOfCoal = int.Parse(textBox4.Text);
-                    var rangeOfTravel = int.Parse(textBox5.Text);
-                    Model.Ships.Add(new Steamer(name, maxSpeed, weight, massOfCoal, rangeOfTravel));
+                    Model.Ships.Add(new Steamer()
+                    {
+                        Name = Model.Name,
+                        Weight = int.Parse(Model.Weight),
+                        MaxSpeed = int.Parse(Model.MaxSpeed),
+                        MassOfCoal = int.Parse(Model.FirstField),
+                        RangeOfTravel = int.Parse(Model.SecondField)
+                    });
                 }
                 else if (radioButton2.IsChecked == true)
                 {
-                    var name = textBox1.Text;
-                    var weight = int.Parse(textBox2.Text);
-                    var maxSpeed = int.Parse(textBox3.Text);
-                    var sailMaterial = textBox4.Text;
-                    var sailArea = int.Parse(textBox5.Text);
-                    Model.Ships.Add(new Sailboat(name, maxSpeed, weight, sailMaterial, sailArea));
+                    Model.Ships.Add(new Sailboat()
+                    {
+                        Name = Model.Name,
+                        Weight = int.Parse(Model.Weight),
+                        MaxSpeed = int.Parse(Model.MaxSpeed),
+                        SailMaterial = Model.FirstField,
+                        SailArea = int.Parse(Model.SecondField)
+                    });
                 }
                 else if (radioButton3.IsChecked == true)
                 {
-                    var name = textBox1.Text;
-                    var weight = int.Parse(textBox2.Text);
-                    var maxSpeed = int.Parse(textBox3.Text);
-                    var armament = textBox4.Text;
-                    var equipment = textBox5.Text;
-                    Model.Ships.Add(new Corvette(name, maxSpeed, weight, armament, equipment));
+                    Model.Ships.Add(new Corvette()
+                    {
+                        Name = Model.Name,
+                        Weight = int.Parse(Model.Weight),
+                        MaxSpeed = int.Parse(Model.MaxSpeed),
+                        Armament = Model.FirstField,
+                        Equipment = Model.SecondField
+                    });
                 }
-                else
-                {
-                    throw new Exception("Не выбран тип судна");
-                }
+                else throw new Exception("Не выбран тип судна");
                 SaveData();
                 UpdateTable();
                 textBlockLog.Foreground = Brushes.Black;
