@@ -7,4 +7,73 @@
     <MassOfCoal>46456</MassOfCoal>
     <RangeOfTravel>434535</RangeOfTravel>
   </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>53434</Name>
+    <Weight>435345</Weight>
+    <MaxSpeed>435345</MaxSpeed>
+    <SailMaterial>345345</SailMaterial>
+    <SailArea>54645</SailArea>
+  </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>45345</Name>
+    <Weight>3563456</Weight>
+    <MaxSpeed>5463456</MaxSpeed>
+    <SailMaterial>635624536</SailMaterial>
+    <SailArea>364536546</SailArea>
+  </Ship><Ship xsi:type="Sailboat">
+    <Name>53434</Name>
+    <Weight>435345</Weight>
+    <MaxSpeed>435345</MaxSpeed>
+    <SailMaterial>345345</SailMaterial>
+    <SailArea>54645</SailArea>
+  </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>45345</Name>
+    <Weight>3563456</Weight>
+    <MaxSpeed>5463456</MaxSpeed>
+    <SailMaterial>635624536</SailMaterial>
+    <SailArea>364536546</SailArea>
+  </Ship>
+	<Ship xsi:type="Sailboat">
+    <Name>53434</Name>
+    <Weight>435345</Weight>
+    <MaxSpeed>435345</MaxSpeed>
+    <SailMaterial>345345</SailMaterial>
+    <SailArea>54645</SailArea>
+  </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>45345</Name>
+    <Weight>3563456</Weight>
+    <MaxSpeed>5463456</MaxSpeed>
+    <SailMaterial>635624536</SailMaterial>
+    <SailArea>364536546</SailArea>
+  </Ship>
+	<Ship xsi:type="Sailboat">
+    <Name>53434</Name>
+    <Weight>435345</Weight>
+    <MaxSpeed>435345</MaxSpeed>
+    <SailMaterial>345345</SailMaterial>
+    <SailArea>54645</SailArea>
+  </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>45345</Name>
+    <Weight>3563456</Weight>
+    <MaxSpeed>5463456</MaxSpeed>
+    <SailMaterial>635624536</SailMaterial>
+    <SailArea>364536546</SailArea>
+  </Ship>
+	<Ship xsi:type="Sailboat">
+    <Name>53434</Name>
+    <Weight>435345</Weight>
+    <MaxSpeed>435345</MaxSpeed>
+    <SailMaterial>345345</SailMaterial>
+    <SailArea>54645</SailArea>
+  </Ship>
+  <Ship xsi:type="Sailboat">
+    <Name>45345</Name>
+    <Weight>3563456</Weight>
+    <MaxSpeed>5463456</MaxSpeed>
+    <SailMaterial>635624536</SailMaterial>
+    <SailArea>364536546</SailArea>
+  </Ship>
 </ArrayOfShip>
