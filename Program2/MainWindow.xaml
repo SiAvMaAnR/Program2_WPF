@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Program2_WPF"
         mc:Ignorable="d"
-        Title="Program2" Width="880" Height="500"  MinWidth="880" MinHeight="500" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Opacity="0.95" Visibility="Visible" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Program2" Width="880" Height="452"  MinWidth="880" MinHeight="500" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Opacity="0.95" Visibility="Visible" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
 
         <TabControl HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
@@ -24,8 +24,7 @@
                                 <RowDefinition Height="20*"/>
                             </Grid.RowDefinitions>
                             <TextBlock x:Name="TextBlockError" Text="{Binding ErrorInfo}"  TextWrapping="Wrap" TextAlignment="Center"  Grid.Row="0" HorizontalAlignment="Stretch" Margin="1,1,1,1" VerticalAlignment="Stretch"/>
-                            <Button x:Name="buttonUpdateData" Content="Обновить" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="3" FontFamily="Arial" FontWeight="Bold" FontSize="24" Margin="5,10" Background="{x:Null}" Foreground="Black" BorderBrush="#FF3F4693" Click="buttonUpdateData_Click" />
-                            <Button x:Name="buttonClearListData" Content="Очистить" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="3" FontFamily="Arial" FontWeight="Bold" FontSize="24" Margin="5,10" Background="{x:Null}" Foreground="Black" BorderBrush="#FF3F4693" Click="buttonDeleteData_Click" />
+                            <Button x:Name="buttonClearListData" Content="Очистить" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="3" FontFamily="Arial" FontWeight="Bold" FontSize="24" Margin="5,10" Background="{x:Null}" Foreground="Black" BorderBrush="#FF3F4693" Click="buttonDeleteData_Click" />
                         </Grid>
                     </GroupBox>
 
@@ -33,7 +32,7 @@
 
                         <TabControl FontFamily="Segoe UI Emoji" FontSize="12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
                             <TabItem x:Name="TabFirstItem" Header="Пароход" Height="25" MinWidth="214" >
-                                <DataGrid x:Name="ItemSteamer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <DataGrid IsReadOnly="True" x:Name="ItemSteamer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn  Header="Название" Width="30*" Binding="{Binding Path=Name}"/>
                                         <DataGridTextColumn Header="Масса" Width="20*" Binding="{Binding Path=Weight}"/>
@@ -44,7 +43,7 @@
                                 </DataGrid>
                             </TabItem>
                             <TabItem x:Name="TabSecondItem" Header="Парусник" Height="25" MinWidth="214" >
-                                <DataGrid x:Name="ItemSailboat"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <DataGrid IsReadOnly="True" x:Name="ItemSailboat"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Название" Width="30*" Binding="{Binding Path=Name}"/>
                                         <DataGridTextColumn Header="Масса" Width="20*" Binding="{Binding Path=Weight}"/>
@@ -55,7 +54,7 @@
                                 </DataGrid>
                             </TabItem>
                             <TabItem x:Name="TabThirdItem" Header="Корвет" Height="25" MinWidth="214" >
-                                <DataGrid x:Name="ItemCorvette" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <DataGrid IsReadOnly="True" x:Name="ItemCorvette" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Название" Width="30*" Binding="{Binding Path=Name}"/>
                                         <DataGridTextColumn Header="Масса" Width="20*" Binding="{Binding Path=Weight}"/>
@@ -175,7 +174,7 @@
                         <Border  BorderThickness="2" BorderBrush="Black"/>
                         <TabControl FontFamily="Arial" FontSize="12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" >
                             <TabItem x:Name="SearchTabFirstItem" Header="Пароход" Height="25" MinWidth="285" >
-                                <DataGrid x:Name="SearchItemSteamer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <DataGrid IsReadOnly="True" x:Name="SearchItemSteamer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn  Header="Название" Width="30*" Binding="{Binding Path=Name}"/>
                                         <DataGridTextColumn Header="Масса" Width="20*" Binding="{Binding Path=Weight}"/>
@@ -186,7 +185,7 @@
                                 </DataGrid>
                             </TabItem>
                             <TabItem x:Name="SearchTabSecondItem" Header="Парусник" Height="25" MinWidth="285" >
-                                <DataGrid x:Name="SearchItemSailboat"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <DataGrid IsReadOnly="True" x:Name="SearchItemSailboat"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Название" Width="30*" Binding="{Binding Path=Name}"/>
                                         <DataGridTextColumn Header="Масса" Width="20*" Binding="{Binding Path=Weight}"/>
@@ -197,7 +196,7 @@
                                 </DataGrid>
                             </TabItem>
                             <TabItem x:Name="SearchTabThirdItem" Header="Корвет" Height="25" MinWidth="285" >
-                                <DataGrid x:Name="SearchItemCorvette" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <DataGrid  IsReadOnly="True" x:Name="SearchItemCorvette" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Название" Width="30*" Binding="{Binding Path=Name}"/>
                                         <DataGridTextColumn Header="Масса" Width="20*" Binding="{Binding Path=Weight}"/>
