@@ -104,7 +104,7 @@ namespace Program2_WPF
             }
             catch (Exception ex)
             {
-                TextBlockError.Text = ex.Message;
+                Model.ErrorInfo = ex.Message;
             }
         }
 
